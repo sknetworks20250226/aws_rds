@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 # Create your views here.
 def board_lists(request):
-    return render(request,'board/lists.html')
+    post = Post.objects.order_by('-created_at')  # 내림차순
+    return render(request,'board/lists.html',{'posts':post})
 
 def board_new(request):
     if request.method=='POST':
