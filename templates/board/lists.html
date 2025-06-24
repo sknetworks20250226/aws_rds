@@ -10,14 +10,14 @@
 </head>
 <body>
     <h1>board lists</h1>
-    <ul>
+    
         {% for post in posts %}
-        <li>
+        <div>
             <strong>{{post.title}}</strong><span>{{post.created_at}}</span>
-            <a href="{% url 'board_update' post.id %}">수정</a>
-            <a href="{% url 'board_delete' post.id %}">삭제</a>
-        </li>
+            <button><a href="{% url 'board_update' post.id %}" class="btn">수정</a></button>
+            <button><a href="{% url 'board_delete' post.id %}" class="btn">삭제</a></button>
+        </div>
         {% endfor %}
-    </ul>
+    
 </body>
 </html>
