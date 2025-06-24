@@ -11,6 +11,8 @@
         {% for post in posts %}
         <li>
             <strong>{{post.title}}</strong><span>{{post.created_at}}</span>
+            <a href="{% url board_update post.id %}">수정</a>
+            <a href="{% url board_delete post.id %}">수정</a>
         </li>
         {% endfor %}
     </ul>
