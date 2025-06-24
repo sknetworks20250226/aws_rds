@@ -14,8 +14,8 @@
         {% for post in posts %}
         <div>
             <strong>{{post.title}}</strong><span>{{post.created_at}}</span>
-            <button><a href="{% url 'board_update' post.id %}" class="btn">수정</a></button>
-            <button><a href="{% url 'board_delete' post.id %}" class="btn">삭제</a></button>
+            <a href="{% url 'board_update' post.id %}" class="btn">수정</a>
+            <a href="{% url 'board_delete' post.id %}" class="btn">삭제</a>
         </div>
         {% endfor %}
     
