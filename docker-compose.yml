@@ -2,12 +2,10 @@ version: '3.8'
 
 services:
   web:
-    build: .        
+    image: sknetworks/aws_rds:latest
     ports:
       - "8000:8000"    
     env_file:
-      - .env
-    # volumes:
-    #   - .:/app
+      - .env    
     environment:
       - DJANGO_SETTINGS_MODULE=aws_rds.settings 
