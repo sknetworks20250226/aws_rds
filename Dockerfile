@@ -8,7 +8,15 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 
 # Install the dependencies
-RUN apt-get update && apt-get install -y gcc default-libmysqlclient-dev \
+RUN apt-get update && apt-get install -y \
+    gcc \
+    default-libmysqlclient-dev \
+    default-mysql-client \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    python3-dev \
+    pkg-config \
     && pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code into the container
