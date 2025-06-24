@@ -12,8 +12,8 @@ def board_new(request):
         return redirect('board_lists')
     return render(request,'board/new.html')
 
-def board_update(request,id):    
-    post = get_object_or_404(Post,id=id)
+def board_update(request,pk):    
+    post = get_object_or_404(Post,id=pk)
     if request.method == 'POST':
         post.title = request.POST['title']
         post.content = request.POST['content']
@@ -21,8 +21,8 @@ def board_update(request,id):
         return redirect('board_lists')
     return render(request,'board/update.html', {'post':post})
 
-def board_delete(request,id):
-    post = get_object_or_404(Post,id=id)
+def board_delete(request,pk):
+    post = get_object_or_404(Post,id=pk)
     if request.method == 'POST':
         post.delete()
         return redirect('board_lists')
